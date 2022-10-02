@@ -1,0 +1,2 @@
+let e=document.querySelector(".popup__bg"),t=document.querySelector(".popup"),c=document.querySelectorAll(".open-popup"),s=document.querySelector(".close-popup");c.forEach((c=>{c.addEventListener("click",(c=>{c.preventDefault(),e.classList.add("active"),t.classList.add("active")}))})),s.addEventListener("click",(()=>{e.classList.remove("active"),t.classList.remove("active")})),document.addEventListener("click",(c=>{c.target===e&&(e.classList.remove("active"),t.classList.remove("active"))}));
+//# sourceMappingURL=index.568207e4.js.map
