@@ -1,0 +1,189 @@
+/* свойства модального окна по умолчанию */
+.modal {
+  position: fixed;
+  /* фиксированное положение */
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  /* цвет фона */
+  z-index: 1050;
+  opacity: 0;
+  /* по умолчанию модальное окно прозрачно */
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  /* анимация перехода */
+  pointer-events: none;
+  /* элемент невидим для событий мыши */
+}
+
+/* при отображении модального окно */
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+  overflow-y: auto;
+}
+
+/* ширина модального окна и его отступы от экрана */
+.modal__dialog {
+  position: absolute;
+  top: 2%;
+  left: 52%;
+  width: 90%;
+  transform: translate(-50%);
+
+  @media screen and (min-width: 768px) {
+    width: 760px;
+    top: 50%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* свойства для блока, содержащего контент модального окна */
+.modal__content {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .modal__content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* свойства для заголовка модального окна */
+.modal__header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: center;
+  -ms-flex-pack: justify;
+  justify-content: center;
+  padding: 15px;
+  border-bottom: 1px solid #eceeef;
+}
+
+.modal__head {
+  padding: 15px;
+  border-bottom: 1px solid #eceeef;
+}
+
+.modal__title {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* свойства для кнопки "Закрыть" */
+.close {
+  position: absolute;
+  bottom: 7px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+  text-decoration: none;
+  z-index: 50;
+}
+
+/* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
+.close:focus,
+.close:hover {
+  color: var(--brandColor);
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.modal__icon {
+  width: 40px;
+  height: 40px;
+  fill: currentColor;
+}
+
+/* свойства для блока, содержащего основное содержимое окна */
+.modal__body {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 15px;
+  overflow: auto;
+  font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
+
+  @media screen and (min-width: 480px) {
+    font-size: 14px;
+  }
+}
+
+.map-260,
+.map-400,
+.map-460,
+.map-750 {
+  display: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 419.5px) {
+  .map-260 {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 420px) and (max-width: 479.5px) {
+  .map-400 {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767.5px) {
+  .map-460 {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .map-750 {
+    display: block;
+  }
+}
+
+.modal__label {
+  font-family: 'Titan One', cursive;
+  font-size: 16px;
+  font-weight: 500;
+  color: #c2e297;
+  margin-bottom: 15px;
+}
+
+.modal__text {
+  font-family: 'DM Sans', sans-serif;
+  text-align: justify;
+}

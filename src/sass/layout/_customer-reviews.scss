@@ -1,0 +1,163 @@
+.customers-reviews {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 86px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-top: 123px;
+    padding-bottom: 132px;
+  }
+}
+
+.swiper__img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 26px;
+}
+
+.swiper__box {
+  position: relative;
+  min-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  padding: 43px 50px 26px;
+  background-color: #fafafa;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 28px;
+    left: 61px;
+    width: 54px;
+    height: 40px;
+    background-image: url(.././images/reviews/brackets.png);
+  }
+
+  @media screen and (max-width: 768px) {
+    max-width: 620px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 620px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 926px;
+  }
+}
+
+.swiper__dots {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 4px;
+  height: 4px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background-color: #c7133e;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #c7133e;
+  }
+
+  &::before {
+    right: 10px;
+  }
+
+  &::after {
+    left: 10px;
+  }
+}
+
+.swiper__thumb {
+  max-width: 180px;
+  margin: 0 auto;
+  background-image: repeating-linear-gradient(
+    transparent 0,
+    transparent 29px,
+    #e1e1e1 0,
+    #e1e1e1 30px
+  );
+
+  @media screen and (min-width: 380px) {
+    max-width: 240px;
+  }
+
+  @media screen and (min-width: 480px) {
+    max-width: 280px;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 524px;
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 822px;
+    font-size: 16px;
+  }
+}
+
+.swiper__text {
+  position: relative;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 2.55;
+  text-align: center;
+  color: #000000;
+  max-width: 157px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 380px) {
+    max-width: 220px;
+  }
+
+  @media screen and (min-width: 480px) {
+    max-width: 255px;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 460px;
+    font-size: 14px;
+    line-height: 2.16;
+    letter-spacing: 0.04em;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 750px;
+    font-size: 16px;
+    line-height: 1.86;
+  }
+}
+
+.swiper__title {
+  padding-bottom: 43px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.86;
+  text-align: center;
+  color: #000000;
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 48px;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 20px;
+  }
+}

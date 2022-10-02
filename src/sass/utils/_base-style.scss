@@ -1,0 +1,15 @@
+body {
+  font-size: 14px;
+  line-height: 1.76;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--mainTextDarkColor);
+  background-color: var(--mainTextLightColor);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}

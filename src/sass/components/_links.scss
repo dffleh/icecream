@@ -1,0 +1,65 @@
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 161px;
+  height: 44px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.3;
+  border-radius: 22px;
+  color: var(--brandColor);
+  background-color: #ffffff;
+  transition: background-color 300ms var(--mainTransition);
+
+  &:hover,
+  &:focus {
+    background-color: var(--btnLightHover);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 174px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 180px;
+  }
+}
+
+.link--how-made {
+  width: 83px;
+  height: 24px;
+  font-size: 8px;
+  font-weight: 400;
+  border-radius: 20px;
+
+  @media screen and (min-width: 1280px) {
+    width: 138px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 1.29;
+  }
+}
+
+.link--product {
+  width: 62px;
+  height: 24px;
+  font-size: 8px;
+  font-weight: 400;
+  border-radius: 20px;
+  color: var(--mainTextLightColor);
+  background-color: var(--btnPinkColor);
+
+  &:focus,
+  &:hover {
+    background-color: var(--btnPinkHover);
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 104px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 1.29;
+  }
+}

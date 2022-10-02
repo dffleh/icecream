@@ -1,0 +1,338 @@
+.popup__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 150;
+  background: var(--secondaryTextLightColor);
+  opacity: 0; // Скрываем фон и сам попап
+  pointer-events: none; // Запрещаем ему быть целью событий
+  transition: 0.5s all;
+}
+
+.popup__bg.active {
+  // При добавлении класса 'active'
+  opacity: 1; // Показываем фон и попап
+  pointer-events: all; // Возвращаем события
+  transition: 0.5s all;
+  overflow-y: scroll;
+}
+
+.popup {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0); // Центрируем и масштабируем в 0 само окно
+  background: #ffffff;
+  padding: 38px 25px;
+  border-radius: 30px;
+  // border: 1px solid var(--brandColor);
+  transition: 0.5s all;
+  width: 96%;
+
+  @media screen and (min-width: $mobile) {
+    width: 395px;
+  }
+
+  @media screen and (min-width: 600px) {
+    width: 440px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    top: 50%;
+    width: 585px;
+  }
+}
+
+.popup.active {
+  // При добавлении класса 'active'
+  transform: translate(-50%) scale(1); // Так же центрируем и плавно увеличиваем
+  transition: 0.5s all;
+
+  @media screen and (min-width: $tablet) {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+//==============================ДЕКОР====================================
+
+@media (max-width: 479.5px) {
+  .decor__left,
+  .decor__right,
+  .decor__circle {
+    display: none;
+  }
+}
+
+.decor__left {
+  bottom: 60px;
+  left: -40px;
+
+  &::before {
+    top: -20px;
+  }
+
+  &::after {
+    top: 20px;
+    left: 10px;
+  }
+}
+
+.decor__right {
+  top: 95px;
+  right: -40px;
+
+  &::before {
+    top: -20px;
+    right: 0;
+  }
+
+  &::after {
+    top: 20px;
+    right: 10px;
+  }
+}
+
+.decor__left,
+.decor__right {
+  content: '';
+  position: absolute;
+  width: 71px;
+  height: 20px;
+  background: var(--secondaryTextLightColor);
+  border-radius: 20px;
+}
+
+.decor__left:before,
+.decor__left:after,
+.decor__right:before,
+.decor__right:after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  border-radius: 30px;
+  background: white;
+}
+
+.decor__circle {
+  position: absolute;
+  bottom: 80px;
+  left: -80px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+}
+
+//==============================ФОРМА====================================
+
+.form__button-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--brandColor);
+  background-color: var(--brandColor);
+  border-radius: 50%;
+  color: #ffffff;
+
+  &:focus,
+  &:hover {
+    color: var(--brandColor);
+    background-color: #ffffff;
+  }
+}
+
+.form__icon {
+  fill: currentColor;
+}
+
+.form__text {
+  margin-bottom: 25px;
+  font-family: 'Titan One', cursive;
+  font-size: 24px;
+  line-height: 1.42;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--secondaryTextLightColor);
+}
+
+.form__text-span {
+  font-family: 'Titan One', cursive;
+  font-size: 28px;
+  line-height: 1.42;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brandColor);
+}
+
+.form__box {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    margin-bottom: 25px;
+  }
+}
+
+.form__thumb {
+  &:first-of-type {
+    @media screen and (min-width: $tablet) {
+      margin-right: 25px;
+    }
+  }
+
+  &:last-of-type {
+    @media screen and (max-width: 767.5px) {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.form__title {
+  display: inline-block;
+  font-size: 21px;
+  line-height: 1.22;
+  color: var(--mainTextLightColor);
+  background-color: #9fcb65;
+  border-radius: 6px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.order {
+  margin-bottom: 10px;
+}
+
+.order__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.form__checkbox-name {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin-right: 20px;
+  font-weight: 600;
+  color: var(--secondaryTextLightColor);
+
+  @media screen and (min-width: 400px) and (max-width: 767.5px) {
+    margin-right: 70px;
+  }
+}
+
+.form__checkbox {
+  margin-left: 10px;
+  border-color: var(--brandColor);
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--secondaryTextLightColor);
+  border-radius: 3px;
+}
+
+.form__checkbox {
+  margin-left: 10px;
+  border-color: var(--brandColor);
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--secondaryTextLightColor);
+  border-radius: 3px;
+}
+
+.checkbox__icon {
+  position: absolute;
+  right: -8px;
+  bottom: 2px;
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  transition: opacity 300ms linear;
+  fill: #9fcb65;
+}
+//=========================================================
+.checkbox:checked + .checkbox__icon {
+  opacity: 1;
+}
+//=========================================================
+
+.form__input-name {
+  font-weight: 600;
+  color: var(--brandColor);
+}
+
+.form__input-number {
+  width: 50px;
+  height: 25px;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--brandColor);
+  color: #71993e;
+}
+
+.form__input {
+  display: block;
+  width: 100%;
+  height: 30px;
+  padding-left: 15px;
+  background-color: transparent;
+  border-radius: 10px;
+  border: 2px solid var(--brandColor);
+  color: var(--brandColor);
+  outline: transparent;
+  transition: border-color 250ms linear;
+
+  @media screen and (max-width: 767.5px) {
+    margin-bottom: 20px;
+  }
+
+  &::placeholder {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.36;
+    letter-spacing: 0.1em;
+    color: var(--secondaryTextLightColor);
+    transition: color 250ms linear;
+  }
+
+  &:focus {
+    border-color: #71993e;
+  }
+
+  &:focus::placeholder {
+    color: #9fcb65;
+  }
+}
+
+.form__input:nth-child(1) {
+  @media screen and (min-width: $tablet) {
+    margin-right: 30px;
+  }
+}
+
+.form__button {
+  color: #ffffff;
+  background-color: var(--brandColor);
+  display: block;
+  outline: transparent;
+  margin: 0 auto;
+
+  &:hover,
+  &:focus {
+    color: var(--brandColor);
+  }
+}

@@ -1,0 +1,312 @@
+.hero {
+  background-color: var(--backgroundHeroColor);
+  overflow: hidden;
+}
+.hero__container {
+  position: relative;
+  display: flex;
+  height: 500px;
+  padding-top: 193px;
+  @media screen and(min-width:$tablet) {
+    height: 400px;
+    padding-top: 102px;
+    flex-direction: column;
+  }
+  @media screen and(min-width:$desktop) {
+    height: 665px;
+    padding-top: 170px;
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 345px;
+    height: 345px;
+    border-radius: 50%;
+    z-index: 0;
+    background-color: #ffa5ba;
+    left: 50%;
+    transform: translateX(-40%);
+    bottom: 75px;
+    animation-name: scaleCloserMobile;
+    animation-duration: 1000ms;
+    animation-delay: 0ms;
+    @media screen and(min-width:$tablet) {
+      width: 322px;
+      height: 322px;
+      bottom: 46px;
+      left: 290px;
+      animation-name: scaleCloser;
+      transform: translateX(0);
+    }
+    @media screen and(min-width:$desktop) {
+      width: 538px;
+      height: 538px;
+      bottom: 75px;
+      left: 375px;
+    }
+  }
+}
+.hero-primary-img {
+  position: absolute;
+  z-index: 5;
+  height: 410px;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-25%);
+  animation-name: moveUpMobile;
+  animation-duration: 700ms;
+  animation-duration: 500ms;
+  @media screen and(min-width:$tablet) {
+    height: 336px;
+    left: 360px;
+    animation-name: moveUp;
+    transform: translateX(0);
+  }
+  @media screen and(min-width:$desktop) {
+    height: 557px;
+    left: 495px;
+  }
+}
+
+.hero-secondary-img {
+  display: none;
+  @media screen and (min-width: $tablet) {
+    position: absolute;
+    z-index: 5;
+    display: block;
+    width: 168px;
+    bottom: 0;
+    right: 15px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 293px;
+  }
+}
+.title-section {
+  z-index: 10;
+  width: 220px;
+  @media screen and (min-width: $tablet) {
+    width: 162px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 280px;
+  }
+}
+.title-section__title {
+  font-family: 'Titan One', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 19px;
+  @media screen and (min-width: $tablet) {
+    font-size: 22px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 38px;
+    margin-bottom: 25px;
+  }
+
+  color: var(--mainTextLightColor);
+  &--accent {
+    font-size: 48px;
+    line-height: 0.97;
+    @media screen and (min-width: $tablet) {
+      font-size: 34px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 58px;
+    }
+
+    color: var(--brandColor);
+  }
+}
+.title-section__buttons-list {
+  display: flex;
+}
+.title-section__buttons-item {
+  display: block;
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+.mini-how-its-made {
+  display: none;
+  z-index: 10;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: flex-end;
+    width: 240px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 420px;
+  }
+}
+.mini-how-its-made__img {
+  width: 125px;
+  height: 125px;
+  @media screen and (min-width: $desktop) {
+    width: 190px;
+    height: 190px;
+  }
+}
+.mini-how-its-made__text {
+  width: 115px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 8px;
+  line-height: 1.5;
+  @media screen and (min-width: $desktop) {
+    width: 200px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  color: var(--mainTextLightColor);
+}
+
+.mini-how-its-made__button-circle {
+  margin-top: 7px;
+  @media screen and (min-width: $desktop) {
+    margin-top: 20px;
+  }
+}
+
+.sale-points {
+  display: none;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 20px;
+    top: 100px;
+  }
+  @media screen and (min-width: $desktop) {
+    top: 160px;
+  }
+}
+.sale-points__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-basis: 50px;
+  @media screen and (min-width: $desktop) {
+    flex-basis: 70px;
+  }
+}
+.sale-points__item:not(:last-child) {
+  margin-bottom: 5px;
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 20px;
+  }
+}
+.sale-points__quantity {
+  z-index: 10;
+  font-family: 'Titan One', cursive;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 1.14;
+  text-align: right;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  @media screen and (min-width: $desktop) {
+    font-size: 46px;
+  }
+
+  color: #d41443;
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -5;
+    top: -2px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    @media screen and (min-width: $desktop) {
+      width: 30px;
+      height: 30px;
+      top: -5px;
+      right: -15px;
+    }
+
+    background-color: #ffffff;
+  }
+}
+.sale-points__label {
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 8px;
+  line-height: 1.25;
+  text-align: right;
+  letter-spacing: 0.04em;
+  @media screen and (min-width: $desktop) {
+    font-size: 14px;
+  }
+
+  color: var(--mainTextLightColor);
+}
+@keyframes moveUp {
+  0% {
+    transform: scale(0.5) translateY(100%);
+  }
+  100% {
+    transform: scale(1) translateY(0%);
+  }
+}
+@keyframes moveUpMobile {
+  0% {
+    transform: scale(0.5) translateY(100%) translateX(-25%);
+  }
+  100% {
+    transform: scale(1) translateY(0%) translateX(-25%);
+  }
+}
+@keyframes scaleCloser {
+  0% {
+    transform: scale(3) translateX(0%);
+  }
+  100% {
+    transform: scale(1) translateX(0%);
+  }
+}
+@keyframes scaleCloserMobile {
+  0% {
+    transform: scale(3) translateX(0%);
+  }
+  100% {
+    transform: scale(1) translateX(-40%);
+  }
+}
+// #more {
+//   display: none;
+// }
+
+// скрытый текст read more
+.cont {
+  display: none;
+}
+
+// стили для подсказки read more
+.tooltip {
+  z-index: 10;
+  position: fixed;
+  padding: 5px 10px;
+  border: 1px solid #b3c9ce;
+  border-radius: 4px;
+  text-align: center;
+  font: italic 14px/1.3 sans-serif;
+  color: #333;
+  background: #fff;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  @media screen and (max-width: $desktop) {
+    display: none;
+  }
+}

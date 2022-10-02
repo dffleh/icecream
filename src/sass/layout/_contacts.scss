@@ -1,0 +1,266 @@
+//-----секция ----//
+.contacts {
+  background: -webkit-linear-gradient(180deg, rgb(255, 255, 255) 10%, rgb(255, 245, 246) 10%);
+  background: -moz-linear-gradient(180deg, rgb(255, 255, 255) 10%, rgb(255, 245, 246) 10%);
+  background: linear-gradient(180deg, rgb(255, 255, 255) 10%, rgb(255, 245, 246) 10%);
+  padding-bottom: 80px;
+
+  @media screen and (min-width: $desktop) {
+    background: url(../images/contacts/bg-contacts.png),
+      linear-gradient(180deg, rgb(255, 255, 255) 11%, #fff5f6 6%);
+    background-repeat: no-repeat;
+    background-position: center 27%;
+    background-size: contain;
+    padding-bottom: 113px;
+  }
+}
+//-----список ----//
+.contacts__list {
+  margin-bottom: 55px;
+  width: 100%;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    padding: 0 0;
+    .contacts__item:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    padding: 0 0;
+    .contacts__item:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+//-----элементы списка ----//
+.contacts__item {
+  text-align: start;
+  padding: 43px 20px;
+
+  box-shadow: 0px 4px 4px 0px #00000040;
+  box-shadow: 0px 8px 30px 0px #d414431a;
+
+  background-color: var(--mainTextLightColor);
+  border-radius: 24px;
+
+  @media screen and (max-width: 767.5px) {
+    width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: $mobile) and (max-width: 767.5px) {
+    width: 300px;
+  }
+  @media screen and (min-width: $tablet) {
+    flex-basis: calc((100% - 40px) / 3);
+    margin-bottom: 0;
+    text-align: start;
+    padding: 50px 30px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-basis: calc((100% - 60px) / 3);
+    text-align: start;
+  }
+}
+.contacts__item {
+  @media screen and(max-width: 767.5px) {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+//-----заголовок ----//
+.contacts__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2px 25px;
+  height: 16px;
+  width: 80px;
+  margin-bottom: 25px;
+
+  color: var(--mainTextLightColor);
+
+  border-radius: 4px;
+  border: 1px solid;
+  border-color: transparent;
+  background-color: var(--aditionalColor1);
+
+  text-transform: uppercase;
+  text-align: center;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.83;
+  letter-spacing: 0.04em;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+    line-height: 1.87;
+    padding: 8px 16px;
+    width: 73px;
+    height: 28px;
+    margin-bottom: 30px;
+  }
+}
+.contacts__title--other {
+  background-color: var(--aditionalColor2);
+  width: 130px;
+
+  @media screen and (min-width: $tablet) {
+    width: 138px;
+  }
+}
+//-----город ----//
+.contact__town {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.83;
+  letter-spacing: 0.04em;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 16px;
+  }
+}
+
+.contacts__town--text {
+  color: var(--secondaryTextDarkColor);
+  line-height: 1.15;
+  letter-spacing: 0em;
+  margin-top: 10px;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #e1e1e1;
+    margin: 25px 0;
+
+    @media screen and (min-width: $tablet) {
+      margin: 30px 0;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin: 32px 0;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin-top: 15px;
+    line-height: 1.64;
+  }
+}
+//-----Дни и время работы ----//
+.contacts__town--days {
+  font-weight: 700;
+  color: var(--mainTextDarkColor);
+  line-height: 1.86;
+  letter-spacing: 0em;
+}
+
+.contacts__town--time {
+  color: var(--secondaryTextLightColor);
+  line-height: 1.86;
+  letter-spacing: 0em;
+  margin-bottom: 10px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 16px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 15px;
+  }
+}
+//----Ссылки и номера ----//
+.contacts__link {
+  font-size: 12px;
+  line-height: 1.5;
+  display: block;
+  color: var(--secondaryTextDarkColor);
+
+  @media screen and (min-width: $tablet) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 16px;
+  }
+
+  transition-property: color;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: var(--secondaryTextLightColor);
+  }
+}
+
+.contacts__link--tel {
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #e1e1e1;
+    margin: 25px 0;
+
+    @media screen and (min-width: $tablet) {
+      margin: 30px 0;
+    }
+    @media screen and (min-width: $desktop) {
+      margin: 32px 0;
+    }
+  }
+}
+//-----Кнопки ----//
+.btn-list {
+  display: flex;
+
+  @media screen and (max-width: 767.5px) {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (min-width: $tablet) {
+    justify-content: center;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    .btn-list__item:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    .btn-list__item:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+}
+
+.btn-list__item:first-child {
+  @media screen and (max-width: 767.5px) {
+    margin-bottom: 10px;
+  }
+}
+
+.link__icon {
+  margin-left: 10px;
+}
